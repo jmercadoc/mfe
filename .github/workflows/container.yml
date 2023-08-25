@@ -13,10 +13,12 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+      - run: echo "AWS_S3_BUCKET_NAME 1-> ${{ secrets.AWS_S3_BUCKET_NAME }}"
+      - run: echo "AWS_S3_BUCKET_NAME 2-> ${AWS_S3_BUCKET_NAME}"
       - run: npm install
       - run: npm run build
 
