@@ -18,6 +18,6 @@ export default () => {
         });
         history.listen(onParentNavigate);
        
-    });
+    }, []);
     return <div ref={ref}/>
 }
